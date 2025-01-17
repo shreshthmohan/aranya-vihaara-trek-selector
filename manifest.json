@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Aranya Vihaara Trek Selector",
+    "version": "1.0",
+    "description": "Automatically selects treks and their corresponding districts",
+    "permissions": [
+      "storage",
+    
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://aranyavihaara.karnataka.gov.in/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://aranyavihaara.karnataka.gov.in/*"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
