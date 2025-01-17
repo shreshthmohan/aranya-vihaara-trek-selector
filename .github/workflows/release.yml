@@ -1,0 +1,54 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Triggers on version tags
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      # If you use npm, uncomment these lines
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20'
+      
+      # - name: Install dependencies
+      #   run: npm install
+      
+      # - name: Build
+      #   run: npm run build
+      
+      - name: Create extension zip
+        run: |
+          zip -r aranya-vihaara-trek-selector.zip . \
+          -x "*.git*" \
+          -x "*.DS_Store" \
+          -x "node_modules/*" \
+          -x "*.zip" \
+          -x "README.md" \
+          -x "package-lock.json" \
+          -x "package.json" \
+          -x ".eslintrc*" \
+          -x ".prettier*" \
+          -x "tests/*" \
+          -x "docs/*" \
+          -x ".vscode/*" \
+          -x ".github/*" \
+          -x "*.map" \
+          -x "*.log"
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: aranya-vihaara-trek-selector.zip
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
