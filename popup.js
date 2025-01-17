@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       try {
         await chrome.scripting.executeScript({
           target: { tabId: tab.id },
-          func: () => initialize()
+          func: () => initialize(true)
         });
         
         const status = document.getElementById('status');

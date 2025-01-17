@@ -187,11 +187,11 @@ console.log('Trek Selector Extension loaded');
   }
 
   // Initialize everything when the page loads
-  async function initialize() {
+  async function initialize(clearCache = false) {
     // Try to get cached trek data
     const storedData = await getTreksFromStorage();
     
-    if (storedData && !shouldRefreshTreks(storedData)) {
+    if (storedData && !shouldRefreshTreks(storedData) && !clearCache) {
       console.log('Using cached trek data');
       trekData = storedData.treks;
     } else {
