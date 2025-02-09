@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    body {
-      width: 200px;
-      padding: 10px;
-    }
-    button {
-      width: 100%;
-      padding: 8px;
-      margin: 5px 0;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      background: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #f0f0f0;
-    }
-    #status {
-      margin-top: 10px;
-      padding: 8px;
-      border-radius: 4px;
-      display: none;
-      font-size: 12px;
-    }
-    .success {
-      background-color: #e6ffe6;
-      color: #006600;
-    }
-    .error {
-      background-color: #ffe6e6;
-      color: #660000;
-    }
-  </style>
-</head>
-<body>
-  <button id="rescanBtn">Rescan Treks</button>
-  <button id="togglePanel">Hide Trek Panel</button>
-  <div id="status"></div>
-  <script src="popup.js"></script>
-</body>
+  <head>
+    <style>
+      body {
+        width: 200px;
+        padding: 10px;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #f0f0f0;
+      }
+      #status {
+        margin-top: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        display: none;
+        font-size: 12px;
+      }
+      .success {
+        background-color: #e6ffe6;
+        color: #006600;
+      }
+      .error {
+        background-color: #ffe6e6;
+        color: #660000;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="rescanBtn">Rescan Treks</button>
+    <button id="togglePanel">Hide Trek Panel</button>
+    <button id="downloadCSV">Download as CSV</button>
+    <button id="downloadJSON">Download as JSON</button>
+    <button id="downloadTXT">Download Clean List</button>
+    <div id="status"></div>
+    <script src="popup.js"></script>
+  </body>
 </html>
